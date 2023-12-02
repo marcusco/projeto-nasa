@@ -9,7 +9,8 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Builder
-@Getter@Setter
+@Getter
+@Setter
 @Entity(name = "planeta")
 public class Planeta {
     

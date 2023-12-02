@@ -4,6 +4,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import br.com.mco.nasa.nasa.domain.Planeta;
 
-public interface PlanetaRepositoty extends JpaRepository<Planeta, Long>{
+public interface PlanetaRepository extends JpaRepository<Planeta, Long>{
     
 }

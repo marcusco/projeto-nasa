@@ -1,7 +1,5 @@
 package br.com.mco.nasa.nasa.service;
 
-import java.util.List;
-
 import org.hibernate.annotations.TenantId;
 import org.springframework.stereotype.Service;
 
@@ -17,6 +15,11 @@ public class TenantIdService extends ServiceBase<TenantIdRepository, TenantId>{
     @Override
     public TenantId save(TenantId entity) {
        return getRepository().save(entity);
+    }
+
+    @Override
+    public TenantId findById(Long id) {
+        return getRepository().findById(id).orElseThrow();
     }
 
    

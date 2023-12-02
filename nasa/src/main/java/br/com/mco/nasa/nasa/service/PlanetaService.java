@@ -1,20 +1,16 @@
 package br.com.mco.nasa.nasa.service;
 
-import java.util.Date;
-
 import org.springframework.stereotype.Service;
 
 import br.com.mco.nasa.nasa.domain.Planeta;
-import br.com.mco.nasa.nasa.repository.PlanetaRepositoty;
+import br.com.mco.nasa.nasa.repository.PlanetaRepository;
 
 
 
 @Service
-public class PlanetaService  extends ServiceBase<PlanetaRepositoty, Planeta>{
+public class PlanetaService  extends ServiceBase<PlanetaRepository, Planeta>{
 
-
-
-    public PlanetaService(PlanetaRepositoty repository, Planeta entity) {
+    public PlanetaService(PlanetaRepository repository, Planeta entity) {
         super(repository, entity);
     }
 
@@ -22,6 +18,11 @@ public class PlanetaService  extends ServiceBase<PlanetaRepositoty, Planeta>{
     public Planeta save(Planeta entity) {
         return getRepository().save(entity);
 
+    }
+
+    @Override
+    public Planeta findById(Long id) {
+        return getRepository().findById(id).orElseThrow();
     }
 
    
