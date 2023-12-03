@@ -10,4 +10,5 @@ spring:
   application:
     name: ms-nasa
   profiles:
-    active: local
+    active: 
+    - local

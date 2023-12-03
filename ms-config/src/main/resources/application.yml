@@ -15,7 +15,7 @@ spring:
           skip-ssl-validation: true
           search-paths:
             - '/{profile}'
-            - '/{application}'
+            - '/app-config/{profile}'
           username: marcuscesaro@gmail.com
           password: M@rcusco1409
           clone-on-start: true
