@@ -1,14 +1,17 @@
 package br.com.mco.nasa.nasa.controller;
 
 
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.mco.nasa.nasa.domain.Planeta;
 import br.com.mco.nasa.nasa.service.PlanetaService;
 
-@RestController("planeta/")
+@RestController
+@RequestMapping("planeta/")
 public class PlanetaController {
 
    private final PlanetaService planetaService;
@@ -26,6 +29,11 @@ public class PlanetaController {
 
         return planetaService.save(planeta);
         
+    }
+
+    @GetMapping("{id}")
+    public Planeta findById(Long id){
+        return planetaService.findById(id);
     }
 
 
