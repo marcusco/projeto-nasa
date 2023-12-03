@@ -1,3 +1,13 @@
+server:
+  port: 8600
+
 spring:
-  config: 
-    import: configserver:http://localhost:10000
+  cloud:
+    config:
+      enabled: true
+      uri: http://localhost:10000 ##this is the link to the server config
+      label: main ##this is what you are missing (name of the git repo branch)
+  application:
+    name: ms-config
+  profiles:
+    active: local

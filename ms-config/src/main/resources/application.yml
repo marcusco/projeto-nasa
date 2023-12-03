@@ -1,0 +1,27 @@
+debug: true
+server:
+  port: 10000
+
+spring:
+  main:
+    banner-mode: console
+  application:
+    name: ms-config
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/marcusco/projeto-nasa.git
+          skip-ssl-validation: true
+          search-paths:
+            - '/{profile}'
+            - '/{application}'
+          username: marcuscesaro@gmail.com
+          password: M@rcusco1409
+          clone-on-start: true
+          timeout: 60 # segundos
+          refresh-rate: 60 # segundos = 5 minutos
+          force-pull: true
+  profiles:
+    active:
+    - local
