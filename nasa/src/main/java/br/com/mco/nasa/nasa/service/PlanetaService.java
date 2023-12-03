@@ -8,7 +8,7 @@ import br.com.mco.nasa.nasa.domain.Planeta;
 import br.com.mco.nasa.nasa.repository.PlanetaRepository;
 
 @Service
-public class PlanetaService extends ServiceBase<PlanetaRepository> implements IServiceBase<Planeta>{
+public class PlanetaService extends ServiceBase<PlanetaRepository, Planeta> {
 
 
 
@@ -18,6 +18,7 @@ public class PlanetaService extends ServiceBase<PlanetaRepository> implements IS
 
     @Override
     public Planeta save(Planeta entity) {
+        preSave(entity);
         return getRepository().save(entity);
     }
 
@@ -30,4 +31,5 @@ public class PlanetaService extends ServiceBase<PlanetaRepository> implements IS
     public List<Planeta> findAll() {
        return getRepository().findAll();
     }
+
 }

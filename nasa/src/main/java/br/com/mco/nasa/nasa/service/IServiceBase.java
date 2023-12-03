@@ -10,5 +10,7 @@ public interface IServiceBase <E> {
 
     public List<E> findAll();
 
+    public void preSave(E entity);
+
 
 }

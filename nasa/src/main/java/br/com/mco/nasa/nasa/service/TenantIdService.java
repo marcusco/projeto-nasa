@@ -8,7 +8,7 @@ import br.com.mco.nasa.nasa.domain.Tenant_Id;
 import br.com.mco.nasa.nasa.repository.TenantIdRepository;
 
 @Service
-public class TenantIdService extends ServiceBase<TenantIdRepository> implements IServiceBase<Tenant_Id>{
+public class TenantIdService extends ServiceBase<TenantIdRepository, Tenant_Id>{
 
     public TenantIdService(TenantIdRepository repository) {
         super(repository);
@@ -16,6 +16,7 @@ public class TenantIdService extends ServiceBase<TenantIdRepository> implements 
 
     @Override
     public Tenant_Id save(Tenant_Id entity) {
+        preSave(entity);
        return getRepository().save(entity);
     }
 
@@ -27,6 +28,11 @@ public class TenantIdService extends ServiceBase<TenantIdRepository> implements 
     @Override
     public List<Tenant_Id> findAll() {
        return getRepository().findAll();
+    }
+
+    @Override
+    public void preSave(Tenant_Id entity) {
+       
     }
     
 }
