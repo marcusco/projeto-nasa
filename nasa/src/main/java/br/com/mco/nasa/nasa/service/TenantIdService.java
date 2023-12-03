@@ -1,5 +1,7 @@
 package br.com.mco.nasa.nasa.service;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import br.com.mco.nasa.nasa.domain.Tenant_Id;
@@ -20,6 +22,11 @@ public class TenantIdService extends ServiceBase<TenantIdRepository> implements 
     @Override
     public Tenant_Id findById(Long id) {
         return getRepository().findById(id).orElseThrow();
+    }
+
+    @Override
+    public List<Tenant_Id> findAll() {
+       return getRepository().findAll();
     }
     
 }

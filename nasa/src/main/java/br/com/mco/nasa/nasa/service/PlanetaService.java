@@ -1,5 +1,7 @@
 package br.com.mco.nasa.nasa.service;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import br.com.mco.nasa.nasa.domain.Planeta;
@@ -22,5 +24,10 @@ public class PlanetaService extends ServiceBase<PlanetaRepository> implements IS
     @Override
     public Planeta findById(Long id) {
         return getRepository().findById(id).orElseThrow();
+    }
+
+    @Override
+    public List<Planeta> findAll() {
+       return getRepository().findAll();
     }
 }

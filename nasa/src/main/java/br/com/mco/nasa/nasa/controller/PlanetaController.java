@@ -1,7 +1,10 @@
 package br.com.mco.nasa.nasa.controller;
 
 
+import java.util.List;
+
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,7 +14,7 @@ import br.com.mco.nasa.nasa.domain.Planeta;
 import br.com.mco.nasa.nasa.service.PlanetaService;
 
 @RestController
-@RequestMapping("planeta/")
+@RequestMapping("planeta")
 public class PlanetaController {
 
    private final PlanetaService planetaService;
@@ -31,8 +34,13 @@ public class PlanetaController {
         
     }
 
-    @GetMapping("{id}")
-    public Planeta findById(Long id){
+    @GetMapping
+    public List<Planeta> findAll(){
+        return planetaService.findAll();
+    }
+
+    @GetMapping("/{id}")
+    public Planeta findById(@PathVariable("id") Long id){
         return planetaService.findById(id);
     }
 
