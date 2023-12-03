@@ -12,10 +12,10 @@ spring:
   jpa:
     database-platform: org.hibernate.dialect.PostgreSQL94Dialect
     show-sql: false
-    generate-ddl: drop-create
+    generate-ddl: false
     properties:
       hibernate:
-        ddl-auto: false
+        ddl-auto: drop-create
         format_sql: true
         enable_lazy_load_no_trans: true
         temp:
